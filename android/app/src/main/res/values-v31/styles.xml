@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Theme applied to the Android Window while the process is starting on Android 12+ (API 31+) -->
+    <style name="LaunchTheme" parent="@android:style/Theme.Black.NoTitleBar">
+        <!-- For backward compatibility / fallback -->
+        <item name="android:windowBackground">@drawable/launch_background</item>
+        
+        <!-- Android 12+ Splash Screen API overrides -->
+        <item name="android:windowSplashScreenBackground">#0D1117</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@mipmap/ic_launcher</item>
+    </style>
+
+    <!-- Theme applied to the Android Window as soon as the process has started on Android 12+ -->
+    <style name="NormalTheme" parent="@android:style/Theme.Black.NoTitleBar">
+        <item name="android:windowBackground">?android:colorBackground</item>
+    </style>
+</resources>

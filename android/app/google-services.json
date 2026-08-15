@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "566909427146",
+    "project_id": "flowpulse2",
+    "storage_bucket": "flowpulse2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:566909427146:android:57e140d0d903cda1290333",
+        "android_client_info": {
+          "package_name": "com.kalash.flowpulse"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDm-qfgtDCd_PlbCbCJHXzYK3K61oXcnT4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
