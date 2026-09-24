@@ -1,154 +1,121 @@
- ⚡ FlowPulse
+# FlowPulse
 
-![FlowPulse Banner](https://img.shields.io/badge/FlowPulse-Streamlined%20Workflow%20%26%20Monitoring-6c5ce7?style=for-the-badge&logo=rocket&logoColor=white)
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge)](CONTRIBUTING.md)
-[![Build Status](https://img.shields.io/badge/build-passing-brightgreen?style=for-the-badge&logo=github-actions)](https://github.com/kalashianed-08/FlowPulse)
-[![Version](https://img.shields.io/badge/version-1.0.0-blue?style=for-the-badge)](https://github.com/kalashianed-08/FlowPulse/releases)
-
-*Мощный, гибкий и современный инструмент для мониторинга процессов, управления рабочими потоками и анализа производительности в реальном времени.*
-
-[📌 Описание](#-описание) • [🚀 Возможности](#-возможности) • [🛠 Технологии](#-технологии) • [📦 Установка](#-установка) • [💻 Использование](#-использование) • [🤝 Вклад в проект](#-вклад-в-проект) • [📜 Лицензия](#-лицензия)
+## Overview
+FlowPulse is a **Flutter** based mobile application that demonstrates a modern architecture using **Riverpod** for state management, **Firebase** for backend services, and rich UI animations with **Lottie** and **video_player**. It serves as a starter template for building feature‑rich cross‑platform apps.
 
 ---
 
-</div>
-
-## 📌 Описание
-
-**FlowPulse** — это высокопроизводительное решение, разработанное для отслеживания «пульса» ваших приложений, микросервисов и асинхронных задач. Проект объединяет в себе интуитивный визуальный интерфейс, встроенную аналитику задержек/пропускной способности и гибкую систему оповещений.
-
-Независимо от того, управляете ли вы сложными пайплайнами обработки данных или отслеживаете состояние критически важных сервисов, FlowPulse предоставляет вам полный контроль над ситуацией в режиме реального времени.
-
----
-
-## 🚀 Возможности
-
-- ⚡ **Мониторинг в реальном времени**: Мгновенный сбор и визуализация метрик с минимальными накладными расходами (Overhead).
-- 📊 **Интерактивные Дашборды**: Наглядные графики, гистограммы и таблицы для отслеживания состояния метрик.
-- 🔔 **Умные Оповещения**: Настройка алертов в Telegram, Discord, Slack, Email или Webhook при превышении пороговых значений.
-- 🔄 **Автоматизация Workflow**: Возможность триггерить асинхронные цепочки действий при наступлении конкретных событий.
-- ⚙️ **Простая Конфигурация**: Быстрый запуск через `YAML` / `JSON` файлы конфигурации или переменные окружения.
-- 🛡️ **Надежность и Отказоустойчивость**: Автоматический реконнект, буферизация событий и встроенная обработка ошибок.
+## Features
+- **State Management** with `flutter_riverpod`
+- **Firebase Integration** (Authentication, core services)
+- **Google Sign‑In** and **Apple Sign‑In** support
+- Beautiful UI powered by **Lottie** animations and **video_player**
+- Custom fonts via `google_fonts`
+- Responsive layout with `gap` and `flutter_svg`
+- Theming and Material Design (`uses-material-design: true`)
 
 ---
 
-## 🛠 Технологии
-
-| Категория | Технологии / Инструменты |
-| :--- | :--- |
-| **Backend / Core** | Node.js / Python / Go *(выберите ваш стек)* |
-| **Storage / Cache** | Redis, PostgreSQL / MongoDB |
-| **Frontend** | React / Vue.js, TailwindCSS, Chart.js / Recharts |
-| **DevOps / CI/CD** | Docker, Docker Compose, GitHub Actions |
+## Tech Stack
+| Layer | Technology |
+|------|------------|
+| UI | Flutter, Material Design, Lottie, video_player |
+| State | Riverpod |
+| Backend | Firebase Core, Firebase Auth |
+| Auth Providers | Google Sign‑In, Apple Sign‑In |
+| Fonts & Icons | google_fonts, cupertino_icons |
+| Assets | Images, videos, animations |
 
 ---
 
-## 📦 Установка
+## Getting Started
+### Prerequisites
+1. **Flutter SDK** (>= 3.12) – install from <https://flutter.dev/docs/get-started/install>
+2. **Android Studio** or **VS Code** with Flutter plugins
+3. An Android/iOS device or emulator
+4. A Firebase project (optional – required for auth features)
 
-### 1. Клонирование репозитория
-
+### Clone the repository
 ```bash
-git clone https://github.com/kalashianed-08/FlowPulse.git
-cd FlowPulse
+git clone https://github.com/<your‑username>/flowpulse.git
+cd flowpulse
 ```
 
-### 2. Установка зависимостей
-
-#### Если вы используете Node.js / npm:
+### Install dependencies
 ```bash
-npm install
+flutter pub get
 ```
 
-#### Если вы используете Python:
+### Configure Firebase (optional)
+- Follow the Firebase console setup for Android and iOS.
+- Download `google-services.json` (Android) and `GoogleService-Info.plist` (iOS) and place them in the respective platform folders.
+
+### Run the app
 ```bash
-python -m venv venv
-source venv/bin/activate  # На Windows: venv\Scripts\activate
-pip install -r requirements.txt
+flutter run
 ```
-
-### 3. Настройка окружения
-
-Создайте файл `.env` на основе примера `.env.example`:
-
+You can specify a device:
 ```bash
-cp .env.example .env
-```
-
-Отредактируйте параметры подключения в файле `.env`:
-```env
-PORT=3000
-DATABASE_URL=postgresql://user:password@localhost:5432/flowpulse
-REDIS_URL=redis://localhost:6379
-LOG_LEVEL=info
+flutter run -d chrome   # web
+flutter run -d emulator-5554   # Android emulator
 ```
 
 ---
 
-## 💻 Использование
-
-### Запуск через Docker (Рекомендуемый способ)
-
-Быстрый запуск всего стека (приложение + база данных + кэш) одной командой:
-
+## Building for Release
+### Android
 ```bash
-docker-compose up -d --build
+flutter build apk   # Generates an APK
+flutter build appbundle   # Generates an AAB for Play Store
 ```
-
-### Локальный запуск (Development Mode)
-
+### iOS
 ```bash
-# Запуск в режиме разработки с hot-reload
-npm run dev
-# или
-python main.py
-```
-
-После запуска интерфейс FlowPulse будет доступен по адресу: `http://localhost:3000`
-
----
-
-## 📁 Структура проекта
-
-```text
-FlowPulse/
-├── 📂 src/                # Исходный код приложения
-│   ├── 📂 controllers/    # Логика обработки запросов
-│   ├── 📂 models/         # Модели данных
-│   ├── 📂 services/       # Бизнес-логика и сервисы мониторинга
-│   └── 📂 utils/          # Вспомогательные утилиты и хелперы
-├── 📂 public/             # Статические файлы и фронтенд
-├── 📂 config/             # Файлы конфигурации
-├── 📂 tests/              # Юнит и интеграционные тесты
-├── 📄 .env.example        # Шаблон переменных окружения
-├── 📄 docker-compose.yml  # Docker сборка
-├── 📄 Dockerfile          # Инструкция контейнеризации
-└── 📄 README.md           # Документация проекта
+flutter build ios   # Requires a macOS machine with Xcode
 ```
 
 ---
 
-## 🤝 Вклад в проект
-
-Мы приветствуем любой вклад в развитие FlowPulse! Если вы хотите улучшить проект:
-
-1. Сделайте **Fork** репозитория.
-2. Создайте ветку для вашей фичи (`git checkout -b feature/AmazingFeature`).
-3. Закоммитьте изменения (`git commit -m 'Add some AmazingFeature'`).
-4. Отправьте ветку в ваш fork (`git push origin feature/AmazingFeature`).
-5. Откройте **Pull Request**.
+## Testing
+The project includes a basic test scaffold.
+```bash
+flutter test
+```
+Add unit and widget tests under the `test/` directory.
 
 ---
 
-## 📜 Лицензия
-
-Проект распространяется под лицензией **MIT**. Подробности в файле [LICENSE](LICENSE).
+## Linting & Code Quality
+The repository uses the recommended Flutter lints.
+```bash
+flutter analyze   # Run static analysis
+```
+Fix issues with:
+```bash
+dart fix --apply
+```
 
 ---
 
-<div align="center">
+## Contributing
+Contributions are welcome! Please:
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/awesome-feature`)
+3. Commit your changes with clear messages
+4. Open a Pull Request targeting `main`
 
-Сделано с любовью ❤️ автор: [kalashianed-08](https://github.com/kalashianed-08)
+---
 
-⭐ Не забудьте поставить звезду репозиторию, если проект вам пригодился!
+## License
+Distributed under the **MIT License**. See `LICENSE` file for details.
+
+---
+
+## Resources
+- Flutter docs: <https://flutter.dev/docs>
+- Riverpod: <https://riverpod.dev>
+- Firebase for Flutter: <https://firebase.flutter.dev>
+- Lottie animations: <https://airbnb.io/lottie>
+
+---
+
+*Happy coding!*
